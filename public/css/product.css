@@ -1,0 +1,548 @@
+
+    /* header CSS */
+    @font-face {
+        font-family: 'Trade_Gothic';
+        src: url(../font/TradeGothicLTBoldCondensedNo.20.ttf) format('truetype');
+    }
+    .header {
+        display: flex;
+        border-top: 1px solid #cfcfcf;
+        border-bottom: 1px solid #cfcfcf;
+        /* background: chartreuse; */
+        height: 40px;
+    }
+    
+    .header_left {
+        flex: 4;
+        /* background: palegreen; */
+        height: 40px;
+    }
+
+    .header_right {
+        display: flex;
+        flex: 1;
+        height: 40px;
+    }
+
+    .header_right_register {
+        display: flex;
+        flex: 1;
+        height: 40px;
+        margin-top: 11px;
+    }
+
+    .header_right_register a {
+        color: #7575757c;
+        font-size: 11px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .header_right_register a:hover {
+        color: #414040a2;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .header_right_callcenter {
+        display: flex;
+        flex: 1;
+        height: 40px;
+        margin-top: 11px;
+        margin-right: 10px;
+    }
+
+    .header_right_callcenter a {
+        color: #7575757c;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .header_right_callcenter a:hover {
+        color: #414040a2;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .header_right_cart {
+        display: flex;
+        flex: 1;
+        margin-top: 11px;
+        padding-left: 10px;
+        height: 40px;
+    }
+
+    .header_right_cart i {
+        color: #7575757c;
+        cursor: pointer;
+    }
+
+    .header_right_cart i:hover {
+        color: #414040a2;
+    }
+
+    .header_right_country {
+        display: flex;
+        flex: 1;
+        margin-top: 11px;
+        height: 40px;
+
+    }
+
+    .header_right_country i {
+        color: #7575757c;
+        cursor: pointer;
+    }
+
+    .header_right_country i:hover {
+        color: #414040a2;
+    }
+
+    /* menual CSS */
+    .menual {
+        display: flex;
+        border-bottom: 1px solid #cfcfcf;
+        height: 80px;
+    }
+
+    .menual_logo {
+        flex: 1;
+        background-image: url(../picture/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 79px;
+        cursor: pointer;
+    }
+
+    .menual_search {
+        flex: 1;
+        margin: auto;
+    }
+
+    .container-1{
+        width: 300px;
+        vertical-align: middle;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .container-1 input#search{
+        width: 220px;
+        height: 45px;
+        border: 1px solid #bdbdbd;
+        color: #464646;
+        font-size: 10pt;
+        float: left;
+        margin-left: 125%;
+        padding-left: 45px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 3px;
+    }
+
+    .container-1 input#search:focus {
+        outline:none;
+        border-width:1px;
+        border-color:#000000;
+    }
+
+
+    .container-1 .icon{
+        position: absolute;
+        top: 50%;
+        margin-left: 133%;
+        margin-top: 12px;
+        z-index: 1;
+        color: #4f5b66;
+    }
+
+    .menual_menu {
+        display: flex;
+        flex: 1;
+        text-align: center;
+        font-family: Trade_Gothic;
+        font-size: 24px;
+        height: 80px;
+    }
+
+    .menual_menu_ul {
+        /* aa */
+        list-style:none;
+        display: flex; 
+        float: left;
+        margin: auto;
+        flex: 1;
+    }
+
+    .menual_menu_casual {
+        float: left;
+        margin: auto;
+        flex: 1;
+        height: 55px;
+        margin-top: 25px;
+        cursor: pointer;
+    }
+
+    .menual_menu_casual:hover {
+        border-bottom: 2px solid #000000;
+    }
+
+    .menual_menu_sport {
+        float: left;
+        margin: auto;
+        flex: 1;
+        height: 55px;
+        margin-top: 25px;
+        cursor: pointer;
+    }
+
+    .menual_menu_sport:hover {
+        border-bottom: 2px solid #000000;
+    }
+
+    .menual_menu_baby {
+        float: left;
+        margin: auto;
+        flex: 1;
+        height: 55px;
+        margin-top: 25px;
+        cursor: pointer;
+    }
+    
+    .menual_menu_baby:hover {
+        border-bottom: 2px solid #000000;
+    }
+
+    .menual_menu_business {
+        float: left;
+        margin: auto;
+        flex: 1;
+        height: 55px;
+        margin-top: 25px;
+        cursor: pointer;
+    }
+
+    .menual_menu_business:hover {
+        border-bottom: 2px solid #000000;
+    }
+
+    /* main CSS */
+    .main {
+        position: relative;
+        min-height: 76vh;
+    }
+
+    .layered {
+        position:absolute;
+    }
+
+    .artical {
+        /* border-bottom: 1px solid #cfcfcf; */
+    }
+
+    .product_top {
+        display: flex; 
+        /* height: 130px; */
+        padding: 20px 20px 20px 20px;
+        /* border-bottom: 1px solid #cfcfcf;    */
+    }
+
+    .product_top_title {
+        flex: 4; 
+    }
+
+    .product_top_control {
+        text-align: right;
+        flex: 1;
+    }
+
+  
+
+    .product_top_first {
+        padding: 20px 10px 20px 10px;
+        font-family: Trade_Gothic;
+        font-size: 16px;
+        height: 34%;
+    }
+
+    .product_top_first a {
+        color: #2b2b2bc2;
+    }
+
+    .product_top_first a:hover {
+        color: #acacace8;
+    }
+
+    .product_top_second {
+        height: 36%;
+        padding: 0 10px 20px 10px;
+        font-family: Trade_Gothic;
+        font-size: 24px;
+    }
+
+    .product_top_third {
+        height: 30%;
+        margin: 7px 80px 0 0;
+    }
+    
+    .product_menu {
+        float: left;
+        width: 0%;
+        padding: 15px 0 0 15px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .menu-total {
+        padding: 0 0 10px 15px;
+        cursor: pointer;
+    }
+
+    .menu-total:hover {
+        color: #adadad;
+    }
+
+    .menu-sub {
+        padding: 0 0 10px 35px;
+        cursor: pointer;
+    }
+
+    .menu-sub:hover {
+        color: #adadad;
+    }
+
+ 
+
+    
+
+    .product_view {
+        float: left;
+        padding: 15px 0 15px 60px;
+        /* width: 90%; */
+        width: 100%;
+    }
+    
+    
+
+    .mainpageImg {
+        padding: 15px 60px 15px 30px;
+        /* height: 529px; 이거부터 옆으로 밀림 */
+    }
+    .mainpageImg_left  {
+        float: left;
+    }
+    .mainpageImg_left img {
+        width: 100%;
+        height: 650px;
+    }
+
+    .mainpageImg_left img:hover {
+        opacity: 0.6;
+    }
+    .mainpageImg_right  {
+        
+    }
+    .mainpageImg_right img {
+        width: 800px;
+        height: 325px;
+    }
+    .mainpageImg_right img:hover {
+        opacity: 0.6;
+    }
+    
+
+    .product_view_container {
+        float: left;
+        width: 30%;
+        /* background: red; */
+        margin: 0 10px 0 10px;
+    }
+
+    .product_view_container_piture {
+        width: 100%;
+        min-height: 327px;
+    }
+
+    .product_view_container_piture:hover {
+        border: 1px solid #d8d8d89c;
+        max-height: 490px;
+    }
+
+    .product_view_container_piture img {
+        width: inherit; 
+        /* height: width; */
+        max-height: 490px;
+        cursor: pointer;
+    }
+    
+    .product_view_container_display {
+        display: flex;
+        width: 100%;
+        height: inherit;
+        min-height: 90px;
+        padding-top: 12px;
+        /* background: yellow; */
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .product_info {
+        flex: 2;
+        
+        /* background: brown; */
+    }
+
+    .product_price {
+        flex: 1;
+        text-align: right;
+        /* background: blue; */
+    }
+
+
+    .footer {
+        border-top: 1px solid #cfcfcf;
+        background: #000000;
+        opacity: .9;
+        height: 105px;
+        width: 100%;
+        clear: both;
+    }
+
+    /* modal css */
+    .modal-content {
+        width: 480px;
+        height: 480px;
+        margin: 180px auto;
+    }
+    
+    .modal-header {
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .close {
+        color: black;
+        opacity: .9;
+    }
+
+    .login_logo {
+        background-image: url(../picture/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 25px auto;
+        height: 79px;
+    }
+    
+    .modal-title {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    .modal-body {
+        align: center;
+        margin: auto 50px;
+    }
+    
+
+    .form-control {
+        width: 100%;
+    }
+
+
+    .form-control:focus {
+        border-width:1px;
+        border-color:#000000;
+    }
+
+    .findpassword {
+        text-align: right;
+        cursor: pointer;
+    }
+
+    .findpassword p{
+        color: #7575757c;
+        margin: 0;
+    }
+
+    .findpassword p:hover{
+        color: #414040a2;
+    }
+
+    .modal-footer  {
+        text-align: center;
+        border-top: none;
+        margin: auto 50px;
+    }
+
+
+    #loginbutton {
+        background: black;
+        width: 100%; 
+        height: 35px;
+        border: 0;
+        outline: 0;
+        color: white;
+        cursor: pointer;
+    }
+
+    .signup-div {
+        margin-top: 15px;
+    }
+
+    .signup-div span{
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 12px;
+        color: #7575757c;
+    }
+
+    .signup-div a{
+        margin-top: 10px;
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 12px;
+        color: #000000;
+        cursor: pointer;
+    }
+
+    .testbutton {
+        cursor: pointer;
+    }  
+
+ 
+    .sortbutton {
+        cursor: pointer;
+        margin: 0 15px 0 20px;
+    }   
+
+
+    .sort-content {
+        margin: 0 2px 5px 0;
+    }
+
+    .popover-content {
+        text-align: right;
+        height: 110px;
+        width: 110px;
+    }
+
+    .popover-content-div {
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 5px 0;
+    }
+
+    #new:hover {
+        color: #adadad;
+    }
+
+    #high:hover {
+        color: #adadad;
+    }
+
+    #low:hover {
+        color: #adadad;
+    }

@@ -1,0 +1,80 @@
+body {
+    background:url("../../picture/header1.jpg");
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Lato, 'sans-serif';
+    outline: #3498db;
+}
+
+.site-wrapper {
+    padding: 50px 100px;
+}
+.signup-form-container {
+    width: 320px;
+    margin: 0 auto;
+}
+.signup-form-header h1 {
+    font-size: 40px;
+}
+.signup-form-header h1 + p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.signup-form-body {
+    padding: 20px 0;
+}
+
+.signup-form-body form {
+    width: 100%;
+}
+
+#signup-form p {
+    margin: 10px 0;
+}
+#signup-form p label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+#signup-form p input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+#signup-form p input:focus {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border-color: #3498db;
+}
+
+#signup-form p input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.signup-form-footer {
+    text-align: center;
+}
+.signup-form-footer p {
+    color: #555;
+}
+.signup-form-footer p a {
+    color: #3498db;
+}

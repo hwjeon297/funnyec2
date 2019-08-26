@@ -1,0 +1,239 @@
+
+$(document).ready(function(){ 
+
+    $('#loginbutton').click(function() {
+        var customerId = $('#loginId').val();
+        var customerPassword = $('#loginPassword').val();
+
+        // ajax --start
+        $.ajax({
+            url : '/login'
+
+            , type : 'post'
+            , data : {
+                customerId : customerId,
+                customerPassword : customerPassword
+            }
+            , datetype : 'JSON'
+            , success : function(res){
+                
+                var ss = JSON.parse(res);
+                    
+                if(res == "0") {
+                    alert("nono");
+                }else { 
+                    $('#myModal').modal('hide');
+
+                    $('.header_right_register').append("<a id='signout' onclick='logout()'>SING OUT</a>");   
+                    
+                    $('#signin').remove();
+
+                }
+            }   
+            , error : function(){
+                alert('Error');
+            }
+        });
+    });
+});
+
+// toggle flag 
+    var toggleFlag = true;
+    $('.testbutton').click(function() {
+        alert(1)
+        // toggle flase width change 
+        if ( toggleFlag == false) {  
+            $('.product_view').width('86%'); 
+        }
+        $('.product_menu').toggle(300, function () {
+            // toggle true width change 
+            if ( toggleFlag == true) {
+                toggleFlag = false;
+                $('.product_view').width('100%'); 
+            } else {
+                toggleFlag = true;
+            }
+        });
+    });
+
+function logout() {
+
+    $.ajax({
+            url : '/regist'
+
+            , type : 'post'
+            , datetype : 'JSON'
+            , success : function(res){
+                location.reload();
+                                    
+            }   
+            , error : function(){
+                alert('Error');
+            }
+        });
+}
+
+
+// Select Menual Event 
+function selectMenual(id) {
+    
+    var productName = $('#' + id).attr('value');
+
+    $(".product_top").load("../../application/views/public/product_top_test.php");
+    $(".product_top").height('130px');
+    
+    // ajax --start
+    $.ajax({
+        url : '/productload'
+
+        , type : 'post'
+        // , type : 'get'
+        , data : {
+            productType: productName,
+        }
+        , datetype : 'JSON'
+        , success : function(res){
+            // alert(res)
+            $('#product_a_name').text("/ " + productName);
+            $('#product_top_second_kind').text(productName + "'s シューズ");
+            $('.product_menu').width('10%');
+            $('.product_view').width('86%');
+          
+
+            var parsingData = JSON.parse(res);
+            
+            var productElement = "";
+            var productMenu    = '<div class="menu-total" id=' + productName + ' onclick=selectCategory(id)>' + productName + '</div>';
+
+            parsingData.menu.forEach(function (item) {
+                productMenu   += '<div class="menu-sub" id=' +item.name + ' onclick=selectCategory(id)>' + item.name + '</div>';
+            });
+            
+            
+            parsingData.view.forEach(function (item) {
+                productElement += '<div class="product_view_container">';
+                productElement += '    <div class="product_view_container_piture" onclick=productInfoPageGo(' + item.code + ')>';
+                productElement += '        <img src="' + item.src + '" alt="default"></img>';
+                productElement += '    </div>';
+                productElement += '    <div class="product_view_container_display">';
+                productElement += '        <div class="product_info">';
+                productElement += '            <span>' + item.name + '</span>';
+                productElement += '        </div>';
+                productElement += '    <div class="product_price"> ' + item.price + '</div>';
+                productElement += '    </div>';
+                productElement += '</div>';
+            });
+
+            // main page
+            $('.product_menu').html(productMenu);
+            $('.product_view').html(productElement);
+
+            // sub page
+            $('.product_info_menu').html(productMenu);
+            $('.productinfo_view').html(productElement);
+        }   
+        , error : function(){
+            alert('Error');
+        }
+    });
+}
+
+
+function selectCategory(id) {
+    
+    var selectId = id;
+    
+    $.ajax({
+        url : '/selectCategory'
+
+        , type : 'post'
+        // , type : 'get'
+        , data : {
+            categoryType : selectId,
+        }
+        , datetype : 'JSON'
+        , success : function(res){
+            
+            $( ".product_menu > div" ).css( "font-weight", 500 );
+            $( ".product_info_menu > div" ).css( "font-weight", 500 );
+            $('#' + id).css('font-weight', 'bold');
+          
+            var parsingData = JSON.parse(res);
+            
+            var productElement = "";
+            
+            parsingData.forEach(function (item) {
+                productElement += '<div class="product_view_container">';
+                productElement += '    <div class="product_view_container_piture" onclick=productInfoPageGo(' + item.code + ')>';
+                productElement += '        <img src="' + item.src + '" alt="default"></img>';
+                productElement += '    </div>';
+                productElement += '    <div class="product_view_container_display">';
+                productElement += '        <div class="product_info">';
+                productElement += '            <span>' + item.name + '</span>';
+                productElement += '        </div>';
+                productElement += '    <div class="product_price"> ' + item.price + '</div>';
+                productElement += '    </div>';
+                productElement += '</div>';
+            });
+
+            // main page
+            $('.product_view').html(productElement);
+
+
+            // sub page
+            $('.productinfo_view').html(productElement);
+
+        }   
+        , error : function(){
+            alert('Error');
+        }
+    });
+}
+
+
+// 상품 상세 페이지 이동
+function productInfoPageGo(num) {
+    var infoPage = num;
+    location.href = "/productInfo?productCode=" + infoPage;
+}
+
+// 카트 페이지 이동
+function cartPageGo() {
+    location.href = "/cartPageGo";
+}
+
+// 토글 
+var toggleFlag = true;
+function toggle() {
+    //toggle flag 
+    if ( toggleFlag == false) {  
+        $('.product_view').width('86%');
+        $('.productinfo_view').width('86%'); 
+    }
+
+    // 상품 페이지 에서 토글
+    $('.product_menu').toggle(300, function () {
+        // toggle true width change 
+        if ( toggleFlag == true) {
+            toggleFlag = false;
+            $('.product_view').width('100%');
+            // $('.productinfo_view').width('100%'); 
+        } else {
+            toggleFlag = true;
+        }
+    });
+    
+    // 상품 상세 페이지 -> 상품 페이지 토글
+    $('.product_info_menu').toggle(300, function () {
+        // toggle true width change 
+        if ( toggleFlag == true) {
+            toggleFlag = false;
+            // $('.product_view').width('100%');
+            $('.productinfo_view').width('100%'); 
+        } else {
+            toggleFlag = true;
+        }
+    });
+}
+
+

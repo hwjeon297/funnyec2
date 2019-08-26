@@ -1,0 +1,166 @@
+
+body {
+    width: 800px;
+    margin: 0 auto;
+}
+
+ul,li{list-style:none; margin: 0;}
+    .slide{height:100px;overflow:hidden;position: relative;}
+    .slide ul{width:calc(100% * 4);display:flex;animation:slide 8s infinite;} /* slide를 8초동안 진행하며 무한반복 함 */
+    .slide li{width:calc(100% / 4);height:100px;}
+    .slide li:nth-child(1){background:url(../picture/h1.jpg);}
+    .slide li:nth-child(2){background:url(../picture/h2.jpg);}
+    .slide li:nth-child(3){background:url(../picture/canvers.jpg);}
+    .slide li:nth-child(4){background:url(../picture/baby.jpg);}
+    @keyframes slide {
+      0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+      10% {margin-left:0;} /* 10 ~ 25 : 변이 */
+      25% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+      35% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+      50% {margin-left:-200%;}
+      60% {margin-left:-200%;}
+      75% {margin-left:-300%;}
+      85% {margin-left:-300%;}
+      100% {margin-left:0;}
+    }
+
+
+.test2 {
+    height: 800px;
+}
+
+.half1 {
+    /* background:url("../picture/canvers.jpg");  */
+    float:left;
+    width:50%;
+    height:50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.half1 img {
+    position: relative;
+}
+
+.half1 img:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.layer1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align:center; 
+    line-height: 380px;
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(248, 247, 216, 0);
+}
+
+.layer1:hover {
+    background-color: rgba(0, 0, 0, 0.514);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgb(255, 255, 255);
+}
+
+
+.half2 {
+
+    clear:right;
+    float:left;
+    width:50%;
+    height:50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.half2 img {
+    position: relative;
+}
+
+.half2 img:hover {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+}
+
+.half3 {
+
+    float:left;
+    width:50%;
+    height:50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.half3 img {
+    position: relative;
+}
+
+.half3 img:hover {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.half4 {
+
+    clear:right;
+    float:right;
+    width:50%;
+    height:50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.half4 img {
+    position: relative;
+}
+
+.half4 img:hover {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

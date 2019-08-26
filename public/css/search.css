@@ -1,0 +1,14 @@
+.product_menu {
+    float: left;
+    width: 10%;
+    padding: 15px 0 0 15px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.product_view {
+    float: left;
+    padding: 15px 0 15px 60px;
+    /* width: 90%; */
+    width: 90%;
+}

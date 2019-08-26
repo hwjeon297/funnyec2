@@ -1,0 +1,316 @@
+.cart-header-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+
+.order-header {
+    margin: 80px 0 30px 0 ;
+}
+
+.order-body-left-header { 
+    display: flex;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 30px 25px 24px; 
+    margin-right: 45px;
+    border-top: 1px solid rgb(216, 215, 215);
+}
+
+.order-body-left-header p {
+    float: left;
+    flex: 1;
+}
+
+.order-login-button {
+    flex: 3;  
+}
+
+.order-checkOne-value div{
+    flex: 1;  
+    float: left;
+    font-size: 12px;
+    margin: 2px 10px;
+}
+
+.order-checkOne-value i{
+   cursor: pointer;
+}
+
+.order-checkTwo-value div{
+    flex: 1;  
+    float: left;
+    font-size: 12px;
+    margin: 2px 10px;
+}
+
+.order-checkTwo-value i{
+    cursor: pointer;
+}
+
+
+
+.order-login-button div {
+    width: 50px;
+    color: #ccc;
+    font-size: 13px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 5px 8px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.order-list-container {
+    margin: 0, 25px;
+}
+
+.order-body-left-body {
+    text-align: left;
+    margin-right: 45px;
+    padding: 0px 25px; 
+}
+
+.ep-container {
+    display: flex;
+}
+
+.email {
+    flex: 1;
+    margin-right: 20px;
+    font-size: 15px;
+    color: rgb(83, 83, 83)
+}
+
+.phone {
+    flex: 1;
+    font-size: 15px;
+    color: rgb(83, 83, 83)
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    outline: none;
+}
+
+.order-body-left-footer-one {
+    padding: 0px 25px;
+    margin: 15px 45px 40px 0;
+
+}
+.order-body-left-footer-two {
+    padding: 0px 25px;
+    margin: 15px 45px 40px 0;
+
+}
+.order-body-left-footer-three {
+    padding: 0px 25px;
+    margin: 15px 45px 40px 0;
+
+}
+
+.recipient-container {
+    display: flex;
+}
+
+.recipient-email {
+    flex: 1;
+    margin-right: 20px;
+    font-size: 15px;
+    color: rgb(83, 83, 83)
+}
+
+.recipient-phone {
+    flex: 1;
+    font-size: 15px;
+    color: rgb(83, 83, 83)
+}
+
+.destination-form {
+    margin: 20px 0;
+}
+
+.destination-input {
+    margin: 10px 0;
+}
+
+.order-botton-info {
+    height: 50px;
+    width: 100%;
+    background-color: #fb5302;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: 0;
+    outline: 0;
+    
+}
+
+.order-botton-destination {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: 0;
+    outline: 0;
+}
+
+.payment-method-form {
+    margin: 10px 0;
+}
+
+.payment-method-form button{
+    width: 50%;
+    height: 55px;
+    background-color: white;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 14px;
+    outline: 0;
+    color: #555;
+}
+
+.agree-form {
+    margin: 20px 0 ;
+}
+
+.agree-form div {
+    margin: 5px 0;  
+}
+
+
+.stepOne-form {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.stepOne-form-left {
+    flex: 4;
+}
+
+.stepOne-form-left div{
+    width: 690px;
+    font-weight: bold;
+}
+
+.stepOne-form-right {
+    flex: 1;
+}
+
+.steptwo-form {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.steptwo-form-left {
+    flex: 4;
+}
+
+.steptwo-form-left div{
+    width: 690px;
+    font-weight: bold;
+}
+
+.steptwo-form-right {
+    flex: 1;
+}
+
+.modify-button {
+    width: 65px;
+    height: 30px;
+    background-color: black;
+    font-weight: bold;
+    font-size: 14px;
+    outline: 0;
+    color: white;
+    border: 0;
+    outline: 0;
+}
+
+.close {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.select-payment button{
+    width: 50%;
+    background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.fa-check {
+    float: right;
+}
+
+.order-list-product-container {
+    width: 100%;
+}
+
+.order-list-container-left {
+    float: left;
+}
+
+.order-list-container-left img{
+    width : 120px;
+    height: 120px;
+}
+
+.order-list-container-right {
+    margin-left: 150px;
+    text-align: left;
+} 
+
+.order-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.order-size {
+    color: rgb(139, 139, 139);
+}
+
+.order-qty {
+    color: rgb(139, 139, 139);
+}
+
+.order-price {
+    margin: 42px 0 0 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(253, 95, 95);
+}
+
+.order-list-container-footer {
+    border-bottom: 1px solid rgb(216, 215, 215);
+    margin: 20px 0;
+}
+
+.label {
+    margin-top: 20px; 
+}
+.price {
+    margin-top: 20px; 
+}
+.total-price-bottom {
+    margin: 36px 0;
+}
+
+.cart-body-right-header {
+    padding-left: 20px;
+}
+

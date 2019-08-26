@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://localhost/cartPageGo -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="./Document_files/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="./Document_files/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="./Document_files/bootstrap.min.js.ダウンロード"></script>
+
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./Document_files/font-awesome.min.css">
+
+    <!-- jquery -->
+    <script src="./Document_files/jquery-3.2.1.min.js.ダウンロード"></script>
+
+    <!-- modal 관련 link -->
+    <link rel="stylesheet" href="./Document_files/bootstrap.min(1).css">
+    <script src="./Document_files/jquery.min.js.ダウンロード"></script>
+    <script src="./Document_files/bootstrap.min.js(1).ダウンロード"></script>
+
+    <!-- css link -->
+    <link rel="stylesheet" type="text/css" href="./Document_files/product.css">
+    <link rel="stylesheet" type="text/css" href="./Document_files/cart.css">
+</head>
+<body>
+    <!-- javacscipt include -->
+    <script type="text/javascript" src="./Document_files/product.js.ダウンロード"></script>
+
+    <!-- header -->
+    <!-- header -->
+<header class="header">
+    <div class="header_left"></div>
+    <div class="header_right">
+        <div class="header_right_register">
+            <a id="signin" data-toggle="modal" href="http://localhost/cartPageGo#myModal">SING IN</a>           <!-- <a id='signin' data-toggle="modal" href="#myModal">SING IN</a> -->
+        </div>
+        <div class="header_right_callcenter">
+            <a href="http://localhost/cartPageGo#">QUESTION</a>
+        </div>
+        <div class="header_right_cart" onclick="cartPageGo()">
+            <i class="fa fa-shopping-cart fa-lg"></i>
+        </div>
+        <div class="header_right_country">
+            <i class="fa fa-globe fa-lg"></i>
+        </div>
+    </div>
+</header>    <!-- login modal -->
+    <!-- login modal -->
+<div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <div class="login_logo"></div>
+                    <span class="modal-title">SONSATIONAL LOGIN</span>
+                </div>
+                <div class="modal-body">
+                    <div class="modal_body_login">
+                        <p>
+                            <input type="text" class="form-control" id="loginId" aria-describedby="emailHelp" placeholder="Enter Id">
+                        </p>
+                    </div>
+                    <div class="modal_body_password">
+                         <p>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                        </p>
+                    </div>
+                    <div class="findpassword">
+                        <p>パスワードを忘れた場合...</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="loginbutton">LOGIN</button>
+                    <div class="signup-div">
+                        <span>
+                            会員ではないでしょうか？<a href="http://localhost/signupPageGo">会員登録</a>
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>    <!-- menual -->
+    <div class="menual">
+    <div class="menual_logo" onclick="window.location.replace(&#39;/product&#39;)"></div>
+    <div class="menual_menu">
+        <ul class="menual_menu_ul">
+            <li class="menual_menu_casual" id="casul" onclick="selectMenual(id)" value="Casul">CASUL</li>
+            <li class="menual_menu_sport" id="sport" onclick="selectMenual(id)" value="Sport">SPORT</li>
+            <li class="menual_menu_baby" id="baby" onclick="selectMenual(id)" value="Baby">BABY</li>
+            <li class="menual_menu_business" id="business" onclick="selectMenual(id)" value="Business">BUSINESS</li>
+        </ul>
+    </div>
+    <div class="menual_search">
+        <div class="container-1">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <input type="search" id="search" placeholder="Search...">
+        </div>
+    </div>
+</div>
+
+    <!-- main -->
+    <main class="main">
+        <!-- product_top -->
+        <div class="product_top">
+    <!-- <div class="product_top_title">
+        <div class="product_top_first">
+            <a href="#">SONSATIONAL</a>
+            <a href="#" id="product_a_name"></a>
+        </div>
+        <div class="product_top_second">
+            <span id="product_top_second_kind"></span>
+        </div>
+        <div class="product_top_third"></div>
+    </div>
+    <div class="product_top_control">
+        <div class="product_top_first">
+            
+        </div>
+        <div class="product_top_second"></div>
+        <div class="product_top_third">
+            <span class="testbutton"><i class="fa fa-search"></i></span>
+            </span><i class="fa fa-shopping-cart fa-lg"></i></span>
+        </div>
+    </div> -->
+</div>
+        <div class="artical">
+            <div class="product_menu">
+                
+</div>
+            <div class="product_view">
+                <div class="cart-container">
+                    <div class="cart-header">
+                        <div class="cart-header-title">C A R T</div>
+                        <div class="cart-header-count">count</div>
+                    </div>
+                    <div class="cart-body">
+                        <div class="cart-body-left">
+                            <div class="cart-body-left-header">전체삭제</div>
+                            <div class="cart-body-left-body">
+                                <div class="cart-list-container">
+                                                                   
+                                    <div class="cart-item-info">
+                                        <div class="cart-item-info-img">
+                                            <img src="./Document_files/airmax97_BL.jpg" alt="">                                            
+                                        </div>
+                                        <div class="cart-item-info-wrap">
+                                            <div class="item-title">이거슨 이름 입니더!</div>
+                                            <div class="item-size">이거슨 사이즈 이니다!</div>
+                                            <div class="item-count">이거슨 갯수 입니다!</div>
+                                        </div>
+                                    </div>
+                                    <div class="cart-item-price">
+                                        <span class="price">s</span>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal" style="
+    padding-bottom: 150px;
+">×</button> 
+                                </div>
+                                
+                            </div>
+
+                        </div> 
+                        <div class="cart-body-right">
+                            <div class="cart-body-right-header">注文予定金額</div>
+                            <div class="cart-body-right-body">
+                                <div class="info-price">
+                                    <span class="item-price">
+                                        <span class="label">商品金額</span>
+                                        <span class="price">ssssssssssss</span>
+                                    </span>
+                                    <span class="item-price" style="margin-top: 20px;">
+                                        <span class="label">予想送料金額</span>
+                                        <span class="price">ssssssssssss</span>
+                                    </span>
+                                </div>
+                                <div class="total-price">
+                                    <span class="label">総予想決済金額</span>
+                                    <span class="price">ssssssssssss</span>
+                                </div>
+                                <div class="order-form">
+                                    <button class="order-botton">注文する</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">footer</footer>
+
+
+<!-- product_menu -->
+
+            
+            </body></html>
