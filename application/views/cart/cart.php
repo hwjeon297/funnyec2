@@ -39,12 +39,14 @@
     <script type="text/javascript" src="../funnyec/public/script/cart.js"></script>
 
     <!-- header -->
-    <?php include_once  APPPATH ."views/public/header.php"; ?>
+    <?php //include_once  APPPATH ."views/public/header.php"; ?>
     <!-- login modal -->
-    <?php include_once  APPPATH ."views/public/loginModal.php"; ?>
+    <?php //include_once  APPPATH ."views/public/loginModal.php"; ?>
     <!-- menual -->
-    <?php include_once  APPPATH ."views/public/menual.php"; ?>
-
+    <?php //include_once  APPPATH ."views/public/menual.php"; ?>
+    <div class="menual">
+        <div class="menual_logo_cart" onclick="window.location.replace('/funnyec/product')"></div>
+    </div>
     <!-- main -->
     <main class="main">
         <!-- layered -->
@@ -56,7 +58,7 @@
         <div class="artical">
             <?php include_once  APPPATH ."views/public/product_menu.php"; ?>
             <?php include_once  APPPATH ."views/cart/cartChangeModal.php"; ?>
-            <div class="product_view">
+            <div class="product_view_cart">
                 <?php 
                     if(!empty($this->cart->contents())) include_once  APPPATH ."views/cart/cart-yes.php"; 
                     else include_once  APPPATH ."views/cart/cart-no.php";

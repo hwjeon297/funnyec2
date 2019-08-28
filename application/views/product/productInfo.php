@@ -28,6 +28,8 @@
     <!-- css link -->
     <link rel="stylesheet" type="text/css" href="../funnyec/public/css/product.css">
     <link rel="stylesheet" type="text/css" href="../funnyec/public/css/productinfo.css">
+    <link rel="stylesheet" type="text/css" href="../funnyec/public/css/productinfo_media.css">
+    
 </head>
 
 <body>
@@ -98,13 +100,15 @@
                     </div>
 
                     <!-- 個数 -->
-                    <div class="product_count">
-                        <span>COUNT</span>
-                        <span>
-                            <input type="text" class=product_count_text value=1>
-                        </span>
-                        <button id="minus" class="btn minus"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                        <button id="plus" class="btn plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    <div class="count-container">
+                        <div class="product_count">
+                            <span>COUNT</span>
+                            <span>
+                                <input type="text" class=product_count_text value=1>
+                            </span>
+                            <button id="minus" class="btn minus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                            <button id="plus" class="btn plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                        </div>
                     </div>
 
                     <!-- 購入  / 気になる --> 

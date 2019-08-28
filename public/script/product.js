@@ -127,7 +127,6 @@ function logout() {
 
 // Select Menual Event 
 function selectMenual(id) {
-    
     var productName = $('#' + id).attr('value');
 
     $(".product_top").load("../funnyec/application/views/public/product_top_test.php");
@@ -144,6 +143,7 @@ function selectMenual(id) {
         }
         , datetype : 'JSON'
         , success : function(res){
+            
             // alert(res)
             $('#product_a_name').text("/ " + productName);
             $('#product_top_second_kind').text(productName + "'s シューズ");

@@ -48,7 +48,7 @@
     <?php //include_once  APPPATH ."views/public/loginModal.php"; ?>
     <!-- menual -->
     <div class="menual">
-        <div class="menual_logo" onclick="window.location.replace('/funnyec/product')"></div>
+        <div class="menual_logo_order" onclick="window.location.replace('/funnyec/product')"></div>
     </div>
 
 
@@ -56,7 +56,7 @@
     <main class="main">
 
         <div class="artical">
-            <div class="product_view">
+            <div class="product_view_order">
                 <?php 
                    include_once  APPPATH ."views/order/orderBody.php"; 
                 ?>
