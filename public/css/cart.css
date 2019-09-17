@@ -145,6 +145,13 @@
     margin-bottom: 30px;
 }
 
+.order-body-right {
+	width: 35%;
+	margin-bottom: 30px;
+	margin-left: 650px;
+	margin-top: 25px;
+}
+
 .cart-body-right-header {
     text-align: left;
     font-size: 18px;

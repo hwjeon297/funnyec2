@@ -15,7 +15,7 @@ class OrderController extends CI_Controller {
         // $count = $this->extendsTest->countPVUU();
 
 		// print_r($count);       
-        //  post 
+        // post
         $code  = $_GET['code'];
         $qty   = $_GET['qty'];
         $price = $_GET['price'];
@@ -64,8 +64,6 @@ class OrderController extends CI_Controller {
             array_push($arr, $orderArr);
         }
 
-        
-
         $data = array('info' => array( 
             'test' => $arr
         ));
@@ -94,13 +92,41 @@ class OrderController extends CI_Controller {
         $size        = $_POST['size'];          // 사이즈
         $qty         = $_POST['qty'];          // 수량
 
-        $key = $this->OrderModel->orderStart($key, $member, $email, $phone, $reName, $rePhone, $destination, $memo, $payment, $money, $code, $size, $qty);
-        $this->OrderModel->orderDelail($key, $code, $size, $qty);
+        $orderId = $this->OrderModel->orderStart($key, $member, $email, $phone, $reName, $rePhone, $destination, $memo, $payment, $money, $code, $size, $qty);
+        $this->OrderModel->orderDelail($orderId, $code, $size, $qty);
        
     
         // cart delete
         $this->cart->destroy();
+
+        echo $orderId;
     }
+
+    function orderDone(){
+		$this->load->model('OrderModel');
+
+    	$orderId = $_GET['orderId'];
+
+    	$orderDoneData = $this->OrderModel->orderDone($orderId);
+
+    	$orderArr = array();
+    	for($i=0; $i<sizeof($orderDoneData); $i++){
+			$orderDoneArr = array(
+				"orderKey" => $orderDoneData[$i]->order_key,
+				"orderName"=>$orderDoneData[$i]->name,
+				"src"=>$orderDoneData[$i]->src,
+				"orderSize"=>$orderDoneData[$i]->order_size,
+				"orderQty"=>$orderDoneData[$i]->order_qty,
+				"orderPrice"=>$orderDoneData[$i]->price,
+				"orderTotal"=>$orderDoneData[$i]->total_price
+			);
+			array_push($orderArr, $orderDoneArr);
+		}
+
+    	$data = array("orderData" => $orderArr);
+
+    	$this->load->view('order/orderdone', $data);
+	}
 
     // random string
     function generateRandomString($length = 6) {
@@ -112,6 +138,46 @@ class OrderController extends CI_Controller {
         }
         return $randomString;
     }
+
+    function orderCheck(){
+		$this->load->model('OrderModel');
+
+    	$orderCheckNumber = $_GET['orderCheckNumber'];
+
+		$orderDoneData = $this->OrderModel->orderCheck($orderCheckNumber);
+
+		$orderArr = array();
+		for($i=0; $i<sizeof($orderDoneData); $i++){
+			$orderDoneArr = array(
+				"orderName"=>$orderDoneData[$i]->name,
+				"src"=>$orderDoneData[$i]->src,
+				"orderSize"=>$orderDoneData[$i]->order_size,
+				"orderQty"=>$orderDoneData[$i]->order_qty,
+				"orderPrice"=>$orderDoneData[$i]->price,
+				"orderTotal"=>$orderDoneData[$i]->total_price
+			);
+			array_push($orderArr, $orderDoneArr);
+		}
+
+		$data = array("orderData" => $orderArr);
+
+		$this->load->view('order/orderCheck', $data);
+	}
+
+	function orderNumberCheck(){
+		$this->load->model('OrderModel');
+
+		$checkOrderNumber = $_POST['checkOrderNumber'];
+
+		$checkRes = $this->OrderModel->checkOrderNumber($checkOrderNumber);
+
+		if(!$checkRes){
+			echo 0;
+		}else{
+			$data = array("orderData" => $checkRes);
+			echo json_encode($data);//checkOrderNumber
+		}
+	}
 
 }
 

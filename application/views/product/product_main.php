@@ -69,17 +69,27 @@
 
     <!-- css link -->
     <link rel="stylesheet" type="text/css" href="../funnyec/public/css/product.css">
+    <link rel="stylesheet" type="text/css" href="../funnyec/public/css/product_media2.css">
+	<link rel="stylesheet" type="text/css" href="../funnyec/public/css/cart.css">
+	<link rel="stylesheet" type="text/css" href="../funnyec/public/css/productInfo.css">
+	<link rel="stylesheet" type="text/css" href="../funnyec/public/css/order.css">
+    
 </head>
 <body>
     <!-- javacscipt include -->
     <script type="text/javascript" src="../funnyec/public/script/product.js"></script>
+	<script type="text/javascript" src="../funnyec/public/script/order.js"></script>
 
     <!-- header -->
     <?php include_once  APPPATH ."views/public/header.php"; ?>
     <!-- login modal -->
     <?php include_once  APPPATH ."views/public/loginModal.php"; ?>
+	<!-- Order Check modal -->
+	<?php include_once  APPPATH ."views/public/checkOrder.php"; ?>
     <!-- menual -->
     <?php include_once  APPPATH ."views/public/menual.php"; ?>
+
+	<?php include_once  APPPATH ."views/order/orderCheck1.php"; ?>
 
     <!-- main -->
     <main class="main">

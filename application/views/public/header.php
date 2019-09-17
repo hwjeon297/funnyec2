@@ -13,14 +13,24 @@
             ?>
            <!-- <a id='signin' data-toggle="modal" href="#myModal">SING IN</a> -->
         </div>
-        <div class="header_right_callcenter">
-            <a href="#">QUESTION</a>
-        </div>
-        <div class="header_right_cart" onclick=cartPageGo()>
-            <i class="fa fa-shopping-cart fa-lg"></i>
-        </div>
-        <div class="header_right_country">
-            <i class="fa fa-globe fa-lg"></i>
-        </div>
+		<div class="header_right_callcenter">
+			<a href="#">QUESTION</a>
+		</div>
+
+		<?php
+			$id = $this->session->userdata('id');
+			if($id == "1"){
+		?>
+			<div class="header_right_country" onclick=managePageGo()>
+				<i class="fa fa-globe fa-lg"></i>
+			</div>
+		<? } else { ?>
+			<div class="header_right_cart" onclick=cartPageGo()>
+				<i class="fa fa-shopping-cart fa-lg"></i>
+			</div>
+			<div class="header_right_callcenter">
+				<a id='orderCheck' data-toggle='modal' href='#checkOrder'>注文確認</a>
+			</div>
+		<? } ?>
     </div>
 </header>

@@ -27,13 +27,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <!-- css link -->
-    <link rel="stylesheet" type="text/css" href="../../../public/css/product.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/signup.css">
+    <link rel="stylesheet" type="text/css" href="../funnyec/public/css/product.css">
+    <link rel="stylesheet" type="text/css" href="../funnyec/public/css/signup.css">
 </head>
 <body>
     <!-- javacscipt include -->
-    <script type="text/javascript" src="../../../public/script/product.js"></script>
-    <script type="text/javascript" src="../../../public/script/signup.js"></script>
+    <script type="text/javascript" src="../funnyec/public/script/product.js"></script>
+    <script type="text/javascript" src="../funnyec/public/script/signup.js"></script>
 
     <!-- header -->
     <?php include_once  APPPATH ."views/public/header.php"; ?>

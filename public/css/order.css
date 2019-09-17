@@ -358,4 +358,10 @@
 .cart-body-right-header {
     padding-left: 20px;
 }
+.orderText{
+	text-align: left;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 20px 0 20px 10px;
+}
 

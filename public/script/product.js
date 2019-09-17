@@ -75,9 +75,7 @@ $(document).ready(function(){
                 }else { 
                     $('#myModal').modal('hide');
 
-                    $('.header_right_register').append("<a id='signout' onclick='logout()'>SING OUT</a>");   
-                    
-                    $('#signin').remove();
+                    location.reload();
 
                 }
             }   
@@ -86,7 +84,62 @@ $(document).ready(function(){
             }
         });
     });
+
+	$('#orderCheckButton').click(function() {
+		var checkOrderNumber = $('#checkOrderNumber').val();
+
+		// ajax --start
+		$.ajax({
+			url : 'orderNumberCheck'
+
+			, type : 'post'
+			, data : {
+				checkOrderNumber : checkOrderNumber
+			}
+			, success : function(res){
+
+				if(res == "0") {
+					var content = "該当の注文番号はありません。";
+					$('.alertMessage').html(content);
+					return false;
+				}else {
+					$('#checkOrder').modal('hide');
+					$('#checkOrderModal').modal('show');
+					$('#checkOrderNumber').val("");
+					$('.alertMessage').html("");
+
+					var res = JSON.parse(res);
+
+					for(var i = 0; i<res.orderData.length; i++){
+						var content = "";
+						content += '<div class="cart-body-right-body">';
+						content += '<div class="info-price">';
+						content += '<div id="" class="order-list-product-container">';
+						content += '<div id="" class="order-list-container-left">';
+						content += '<img src=' + res.orderData[i].src + '></div>';
+						content += '<div class="order-list-container-right">';
+						content += '<div class="order-name">'+res.orderData[i].name+'</div>';
+						content += '<div class="order-size">'+res.orderData[i].order_size+'</div>';
+						content += '<div class="order-qty">'+res.orderData[i].order_qty+'</div>';
+						content += '<div class="order-price">'+res.orderData[i].price+'</div>';
+						content += '</div></div></div></div>';
+						$('.orderCheckContent').append(content);
+					}
+				}
+			}
+			, error : function(){
+				alert('Error');
+			}
+		});
+	});
+
+	$('.closeCheckOrder').click(function(){
+		$('.orderCheckContent *').remove();
+		$('#checkOrderModal').modal('hide');
+	});
 });
+
+
 
 // toggle flag 
     // var toggleFlag = true;
@@ -116,7 +169,7 @@ function logout() {
         , type : 'post'
         , datetype : 'JSON'
         , success : function(res){
-            location.replace('/product');
+            location.replace('/funnyec/product');
         }   
         , error : function(){
             alert('Error');
@@ -261,6 +314,7 @@ function cartPageGo() {
     location.href = "/funnyec/cartPageGo";
 }
 
+
 // 토글 
 var toggleFlag = true;
 function toggle() {
@@ -364,9 +418,6 @@ function orderby(id) {
                 $('.product_view').append('<div class="product_code_hidden"  id="sub_' + parsingData.order.sub + '" hidden></div>');
                 $('.productinfo_view').append('<div class="product_code_hidden"  id="sub_' + parsingData.order.sub + '" hidden></div>');
             }
-            
-
-            
 
         }   
         , error : function(){
@@ -374,4 +425,10 @@ function orderby(id) {
         }
     });
 } 
+
+function managePageGo(){
+    location.href = "/funnyec/managePageGo";
+}
+
+
 

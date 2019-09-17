@@ -173,7 +173,7 @@ class ProductModel extends CI_model {
     {
         try {
 
-           $sql = "SELECT size FROM ec.product_size WHERE product_code = $productCode";
+           $sql = "SELECT size FROM ec.product_size WHERE product_code = $productCode order by size asc";
 
            $result = $this->db->query($sql)->result();
 
@@ -192,7 +192,7 @@ class ProductModel extends CI_model {
 
         try {
             
-            $sql = "SELECT code, src, name, price FROM product WHERE name like '%$product%'" ;
+            $sql = "SELECT code, src, name, price FROM product WHERE name like '%$product%'";
 
             $result = $this->db->query($sql)->result();
 
@@ -203,8 +203,30 @@ class ProductModel extends CI_model {
         }
 
         return $result;
-        
+
     }
+
+	public function insertProduct($productName, $name, $productPrice, $firstCategory, $secondCategory){
+    	$name = "../funnyec/public/picture/$name";
+
+		$sql = "insert into product (name, src, price, main_category, sub_category) values ('$productName', '$name', '$productPrice', '$firstCategory', '$secondCategory')";
+
+		$result = $this->db->query($sql);
+
+		$sql = "SELECT code FROM product where name = '$productName'";
+
+		$key = $this->db->query($sql)->result();
+
+		return $key[0]->code;
+	}
+
+	public function insertSize($code, $size){
+    	for($i=0; $i <sizeof($size); $i++){
+			$sql = "insert into product_size (product_code, size) values ('$code', '$size[$i]')";
+
+			$result = $this->db->query($sql);
+		}
+	}
 }
 
 ?>

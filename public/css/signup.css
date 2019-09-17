@@ -1,3 +1,10 @@
+.product_view {
+    float: left;
+    padding: 15px 0 15px 60px;
+     width: 100%; 
+/*    max-width: 100%;*/
+}
+
 .signup-container {
     /* background-color: blue; */
     margin: 0 40%;

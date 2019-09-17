@@ -15,7 +15,7 @@ class RegistrationModel extends CI_model {
             try {
               
                 $result = $this->loginValidateCheck($id, $pw);
-                return $result;
+                //return $result;
                 if(!$result) return 0;
               
             } catch (\Throwable $th) {

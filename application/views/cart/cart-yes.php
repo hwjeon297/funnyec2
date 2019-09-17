@@ -54,19 +54,28 @@
                     <span class="item-price">
                         <span class="label">商品金額</span>
                         <?php 
-                            echo '<span class="price">' . $price .  "￥" .  '</span>'; 
+                            echo '<span id="totalprice" class="price">' . $price .  "円" .  '</span>'; 
                         ?>
                     </span>
                     <span class="item-price" style="margin-top: 20px;">
                         <span class="label">予想送料金額</span>
-                        <span class="price">ssssssssssss</span>
+                        <span id="deliveryFee" class="price">
+                        <?php
+                            $leftPrice = 1000000-$price;
+                            if($price >= 1000000){
+                                echo '<span id="freeShipping" class="price">送料無料</span>';
+                            }else{
+                                echo '<span class="price">500円<br>あと、'. $leftPrice.'円で送料無料</span>';
+                            }
+                        ?>
+                        </span>
                     </span>
                 </div>
                 <div class="total-price">
                     <span class="label">総予想決済金額</span>
                     <span class="price">
                         <?php 
-                            echo '<span class="price">' . $price .  "￥" .  '</span>'; 
+                            echo '<span id="totalWithShipping" class="price">' . $price .  "￥" .  '</span>'; 
                         ?>
                     </span>
                 </div>

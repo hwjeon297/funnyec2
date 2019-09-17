@@ -25,6 +25,10 @@ class PageController extends CI_Controller {
     {
         $this->load->view('signup/signup');
     }
+    
+    public function manage(){
+        $this->load->view('manage/manage');
+    }
 
 }
 

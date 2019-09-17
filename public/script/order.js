@@ -301,7 +301,6 @@ function stepThree() {
         url : 'order'
 
         , type     : 'post'
-        , datetype : 'JSON'
         , data     : {
             member      : member,
             email       : email,
@@ -317,8 +316,8 @@ function stepThree() {
             qty         : qty
         }
         , success : function(res){
-            alert("注文完了しました");
-            location.replace('/funnyec/product');
+            //location.replace('/funnyec/orderDone');
+            location.href= "/funnyec/orderDone?orderId="+ res;
             console.log(res)
         }   
         , error : function(){
@@ -334,4 +333,9 @@ function listFolder() {
 
 function goInfo(id) {
     window.location.href = "/funnyec/productInfo?productCode=" + id;
+}
+
+function goOrderCheck(){
+	$orderCheckNumber = $('#orderCheckNumber').val();
+	location.href = "/funnyec/orderCheck?orderCheckNumber=" + $orderCheckNumber;
 }

@@ -473,8 +473,8 @@
         text-align: center;
         border-top: none;
         margin: auto 50px;
+		margin-bottom: 20px;
     }
-
 
     #loginbutton {
         background: black;

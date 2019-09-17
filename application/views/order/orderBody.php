@@ -218,20 +218,39 @@
                                 <div class="order-size-hidden" hidden><?php echo $value['size'] . '-'; ?></div>
                                 <div class="order-qty"><?php echo "quantity : " . $value['qty']; ?></div>
                                 <div class="order-qty-hidden" hidden><?php $price1 = 0; $price1 += $value['price'] * $value['qty'];  echo $value['qty'] . '-'; ?></div>
-                                <div class="order-price"><?php echo number_format($value['price']) . '￥'; ?></div>
+                                <div class="order-price"><?php echo number_format($value['price']) . '円'; ?></div>
+                                <div class="totalprice" hidden><?php $price2 += $price1; ?></div>
                             </div>
                             <div class="order-list-container-footer"></div>
                         </div>
                     <?php   }  ?>
                     <?php }  ?>
                 </div>
-
-
+                
+                <div class="info-price">
+                    <span class="item-price">
+                        <span class="label">予想送料金額</span>
+                        <span id="deliveryFee" class="price">
+                            <?php
+                                if($price2 >= 1000000){
+                                    echo "送料無料";
+                                }else{
+                                    echo "500円";
+                                }
+                            ?>
+                        </span>
+                    </span>
+                </div>
+                
                 <div class="total-price">
                     <span class="label">総予想決済金額</span>
                     <span class="price">
                         <?php 
-                            echo '<span class="price">' . number_format($price1) . "￥" .  '</span>'; 
+                            if($price2 >= 1000000){
+                                echo '<span class="price">' . number_format($price2) . "円" .  '</span>';    
+                            }else{
+                                echo '<span class="price">' . number_format($price2+500) . "円" .  '</span>';
+                            }
                         ?>
                     </span>
                     <span class="total-price-bottom"></span>

@@ -1,3 +1,14 @@
+$(document).ready(function(){
+    var shippingCondition = $('#freeShipping').text();
+    var totalPrice = $('#totalprice').text();
+    var totalPriceOri = totalPrice.slice(0,-1);
+    totalPriceOri *= 1; //string to Number
+    
+    if(shippingCondition　!== "送料無料"){
+        totalPriceOri = totalPriceOri+500+"円";
+        $('#totalWithShipping').html(totalPriceOri);
+    }
+});
 function totalDeleteCart() {
     $.ajax({
         url : 'totalDeleteCart'
@@ -132,7 +143,6 @@ function gotoshopping() {
 }
 
 function cartOrderPage() {
-    
     window.location.href = '/funnyec/cartOrderPage';
     
 }

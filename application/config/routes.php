@@ -81,7 +81,13 @@ $route['product']              = 'LoginController/gogo';
 $route['orderPage']            = 'OrderController/orderPage';
 $route['cartOrderPage']        = 'OrderController/cartOrderPage';
 $route['order']                = 'OrderController/order';
+$route['orderDone']			   = 'OrderController/orderDone';
+$route['orderCheck']		   = 'OrderController/orderCheck';
+$route['orderNumberCheck']	   = 'OrderController/orderNumberCheck';
 
+// manage routing 
+$route['managePageGo']         = 'PageController/manage';
+$route['insertProduct']		   = 'ManageController/insertProduct';
 
 // test route
 $route['test']                 = 'LoginController/test';
