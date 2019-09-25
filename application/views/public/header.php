@@ -6,7 +6,7 @@
             <?php 
                 $id = $this->session->userdata('id');
                 if(!isset($id)) {
-                    echo "<a id='signin' data-toggle='modal' href='#myModal'>SING IN</a>";
+                    echo "<a id='signin' data-toggle='modal' href='#myModal'>SING 0N</a>";
                 }else {
                     echo "<a id='signout' onclick='logout()'>SIGN OUT</a>";
                 }

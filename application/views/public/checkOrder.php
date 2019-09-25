@@ -3,7 +3,7 @@
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" onclick="eraseData()">&times;</button>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<div class="login_logo"></div>
 				<span class="modal-title">SONSATIONAL 注文確認</span>
 			</div>
